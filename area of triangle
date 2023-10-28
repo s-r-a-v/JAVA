@@ -1,0 +1,10 @@
+class Area
+{
+public static void main(String args[])
+{
+int a,b,h;
+b=2,h=3;
+a=b*h/2;
+System.out.println("output="+a);
+}
+}
