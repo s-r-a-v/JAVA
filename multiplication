@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        int m = 3;
+        int n = 5;
+
+        for (int i = m; i <= n; i++) {
+            for (int j = m; j <= n; j++) {
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
