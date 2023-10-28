@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of numbers (n) you want to find the LCM and GCD for:");
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        int gcd = findGCD(numbers);
+        int lcm = findLCM(numbers, gcd);
+        System.out.println("LCM = " + lcm);
+        System.out.println("GCD = " + gcd);
+    }
+
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return findGCD(b, a % b);
+    }
+
+    public static int findGCD(int[] numbers) {
+        int result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            result = findGCD(result, numbers[i]);
+        }
+        return result;
+    }
+
+    public static int findLCM(int[] numbers, int gcd) {
+        int max = numbers[0];
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        int lcm = (max / gcd) * max;
+        for (int num : numbers) {
+            lcm = Math.max(lcm, (num / gcd) * num);
+        }
+        return lcm;
+    }
+}
