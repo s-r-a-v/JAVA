@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of square matrices (for example, 2, 2): ");
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int p = sc.nextInt();
+
+        int[][] firstMatrix = new int[n][m];
+        int[][] secondMatrix = new int[m][p];
+        int[][] result = new int[n][p];
+
+        System.out.println("Enter elements of matrix 1: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                firstMatrix[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of matrix 2: ");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < p; j++) {
+                secondMatrix[i][j] = sc.nextInt();
+            }
+        }
+
+        result = multiplyMatrices(firstMatrix, secondMatrix, n, m, p);
+
+        System.out.println("Result matrix: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[][] multiplyMatrices(int[][] firstMatrix, int[][] secondMatrix, int n, int m, int p) {
+        int[][] result = new int[n][p];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < p; j++) {
+                result[i][j] = 0;
+                for (int k = 0; k < m; k++) {
+                    result
+}
+}
+}
