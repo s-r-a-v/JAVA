@@ -1,0 +1,20 @@
+class Add
+{
+int Addnumbers(int num1,int num2)
+{
+return num1+num2;
+}
+int Addnumbers(int num1,int num2,int num3)
+{
+return num1+num2+num3;
+}
+public static void main(String args[])
+{
+Add obj =new Add();
+int result=obj.Addnumbers(5,7);
+System.out.println("Addition of two numbers"+result);
+result=obj.Addnumbers(5,7,9);
+System.out.println("Addition of three numbers"+result);
+}
+}
+
