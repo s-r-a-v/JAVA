@@ -1,0 +1,48 @@
+import java.util.Scanner;
+class A {
+	protected double r;
+	double Area;
+	void get1(double a)
+	{
+		r=a;
+	}
+	void calculate1() 
+	{
+ 		Area=3.14*r*r;
+	}
+	void display1()
+	{
+		System.out.println("The area of the circle is " +Area);
+	}
+}
+class B extends A 
+{
+	private double h;
+	double Volume;
+	void get2(double t)	
+	{
+		h=t;
+	}
+	void calculate2() 
+	{	
+		Volume=3.14*r*r*h;
+	}
+	void display2() 
+	{
+		System.out.println("The volume of the cylinder is " +Volume);
+	}
+public static void main(String args[]) {
+	B obj = new B();
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter the radius of the circle: ");
+	int x = s.nextInt();
+	System.out.println("Enter the height of the cylinder: ");
+	int y = s.nextInt();
+	obj.get1(x);
+	obj.get2(y);
+	obj.calculate1();
+	obj.calculate2();
+	obj.display1();
+	obj.display2();
+    }
+}
