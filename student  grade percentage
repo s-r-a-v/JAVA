@@ -1,0 +1,67 @@
+import java.util.*;
+
+class Marks {
+    int marksPython;
+    int marksC;
+    int marksMath;
+    int marksPhysics;
+
+    void enterMarks() {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the marks in Python: ");
+        marksPython = s.nextInt();
+
+        System.out.print("Enter the marks in C Programming: ");
+        marksC =s.nextInt();
+
+        System.out.print("Enter the marks in Mathematics: ");
+        marksMath = s.nextInt();
+
+        System.out.print("Enter the marks in Physics: ");
+        marksPhysics = s.nextInt();
+    }
+}
+
+class TotalAndAggregate extends Marks {
+    int totalMarks;
+
+    void calculateTotal() {
+        totalMarks = marksPython + marksC + marksMath + marksPhysics;
+    }
+}
+
+class Grade extends TotalAndAggregate {
+    double aggregate;
+
+    void calculateAggregate() {
+        aggregate = totalMarks / 4.0;
+    }
+
+    void calculateGrade() {
+        System.out.println("Total = " + totalMarks);
+        System.out.println("Aggregate = " + aggregate);
+
+        if (aggregate > 75) {
+            System.out.println("DISTINCTION");
+        } else if (aggregate >= 60 && aggregate < 75) {
+            System.out.println("FIRST DIVISION");
+        } else if (aggregate >= 50 && aggregate < 60) {
+            System.out.println("SECOND DIVISION");
+        } else if (aggregate >= 40 && aggregate < 50) {
+            System.out.println("THIRD DIVISION");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+}
+
+public class StudentGrade {
+    public static void main(String[] args) {
+        Grade student = new Grade();
+        student.enterMarks();
+        student.calculateTotal();
+        student.calculateAggregate();
+        student.calculateGrade();
+    }
+}
