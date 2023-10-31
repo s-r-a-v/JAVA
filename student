@@ -1,0 +1,40 @@
+import java.util.*;
+class Student{
+String name;
+int registerno,total=0,avg=0;
+int marks[]=new int[5];
+void get(String a ,int b,int c[]){
+name=a;
+registerno=b;
+marks=c;
+}
+void Calculate(){
+for(int i=0;i<5;i++){
+total+=marks[i];
+}
+avg=total/5;
+}
+void display(){
+System.out.println("name:"+name);
+System.out.println("register number:"+registerno);
+System.out.println("average marks"+avg);
+}
+public static void main(String args[]){
+String x;
+int y;
+int z[]=new int[5];
+Scanner s=new Scanner(System.in);
+System.out.println("enter name");
+x=s.nextLine();
+System.out.println("enter register number:");
+y=s.nextInt();
+for(int i=0;i<5;i++){
+System.out.println("enter marks:"+(i+1));
+z[i]=s.nextInt();
+}
+Student obj=new Student();
+obj.get(x,y,z);
+obj.Calculate();
+obj.display();
+}
+}
